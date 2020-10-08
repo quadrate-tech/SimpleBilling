@@ -43,6 +43,7 @@
             this.ManageVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManageBankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PurchaseOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gRNInvoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.receiptsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,7 +55,6 @@
             this.ConfigsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LblAutoLogOut = new System.Windows.Forms.Label();
             this.AutoLogOut = new System.Windows.Forms.Timer(this.components);
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +71,7 @@
             this.MenuStrip1.Size = new System.Drawing.Size(1354, 29);
             this.MenuStrip1.TabIndex = 1;
             this.MenuStrip1.Text = "menuStrip1";
+            this.MenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
             // 
             // mASTERToolStripMenuItem
             // 
@@ -171,6 +172,13 @@
             this.PurchaseOrderToolStripMenuItem.Text = "Purchase Order";
             this.PurchaseOrderToolStripMenuItem.Click += new System.EventHandler(this.PurchaseOrderToolStripMenuItem_Click);
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(247, 24);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -236,7 +244,7 @@
             // ConfigsToolStripMenuItem
             // 
             this.ConfigsToolStripMenuItem.Name = "ConfigsToolStripMenuItem";
-            this.ConfigsToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
+            this.ConfigsToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.ConfigsToolStripMenuItem.Text = "Configs";
             this.ConfigsToolStripMenuItem.Click += new System.EventHandler(this.ConfigsToolStripMenuItem_Click);
             // 
@@ -257,13 +265,6 @@
             this.AutoLogOut.Enabled = true;
             this.AutoLogOut.Interval = 1000;
             this.AutoLogOut.Tick += new System.EventHandler(this.AutoLogOut_Tick);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(247, 24);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // Main
             // 

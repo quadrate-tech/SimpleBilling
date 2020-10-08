@@ -361,5 +361,10 @@ namespace SimpleBilling
         {
             Application.Exit();
         }
+
+        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }
