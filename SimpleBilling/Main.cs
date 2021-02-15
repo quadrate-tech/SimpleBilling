@@ -142,23 +142,23 @@ namespace SimpleBilling
             manageGRN.Show();
         }
 
-        private void gRNInvoicesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form.GetType() == typeof(GRNInvoices))
-                {
-                    form.Activate();
-                    return;
-                }
-            }
+        //private void gRNInvoicesToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    foreach (Form form in Application.OpenForms)
+        //    {
+        //        if (form.GetType() == typeof(GRNInvoices))
+        //        {
+        //            form.Activate();
+        //            return;
+        //        }
+        //    }
 
-            GRNInvoices InvoiceGRN = new GRNInvoices()
-            {
-                MdiParent = this
-            };
-            InvoiceGRN.Show();
-        }
+        //    GRNInvoices InvoiceGRN = new GRNInvoices()
+        //    {
+        //        MdiParent = this
+        //    };
+        //    InvoiceGRN.Show();
+        //}
 
         private void quickSaleToolStripMenuItem_Click(object sender, EventArgs e)
         {
