@@ -419,10 +419,10 @@ namespace SimpleBilling.MasterForms
                         TxtUnitPrice.Text = data.SellingPrice.ToString();
                         TxtProductCode.Text = data.Code;
                         LblStockOnHand.Text = data.StockQty.ToString();
-                        if (data.StockQty < stock.SetMinValue)
-                            LblStockOnHand.ForeColor = System.Drawing.Color.Red;
-                        else
-                            LblStockOnHand.ForeColor = System.Drawing.Color.Lime;
+                        //if (data.StockQty < stock.SetMinValue)
+                        //    LblStockOnHand.ForeColor = System.Drawing.Color.Red;
+                        //else
+                        //    LblStockOnHand.ForeColor = System.Drawing.Color.Lime;
                         TxtDiscount.Text = "0";
                     }
                     try
@@ -591,6 +591,11 @@ namespace SimpleBilling.MasterForms
         }
 
         private void TxtDiscount_KeyDown(object sender, KeyEventArgs e)
+        {
+            AddToDGV(sender,e);
+        }
+
+        private void AddToDGV(object sender, KeyEventArgs e)
         {
             try
             {
@@ -805,7 +810,9 @@ namespace SimpleBilling.MasterForms
                     Qty = Convert.ToSingle(TxtQuantity.Text.Trim());
                     Total = UnitPrice * Qty;
                     TxtSubTotal.Text = Total.ToString();
+                    // Calculate Discount
                     Discount = Convert.ToSingle(TxtDiscount.Text.Trim());
+                    
                     NetTotal = Total - Discount;
                     TxtNetTotal.Text = NetTotal.ToString();
                 }
@@ -934,17 +941,7 @@ namespace SimpleBilling.MasterForms
 
         private void TxtQuantity_KeyDown(object sender, KeyEventArgs e)
         {
-            try
-            {
-                if (e.KeyCode == Keys.Enter)
-                {
-                    AddReceiptBody();
-                }
-            }
-            catch (Exception ex)
-            {
-                Exp(ex);
-            }
+            AddToDGV(sender, e);
         }
 
         private void TxtQuantity_KeyPress(object sender, KeyPressEventArgs e)
@@ -1097,15 +1094,21 @@ namespace SimpleBilling.MasterForms
                     if (!Path.EndsWith(@"\"))
                         Path += @"\";
                     string fileName = Path + Info.RandomString(4) + ".pdf";
+                    //Declare a PDF Writer
                     PdfWriter writer = new PdfWriter(fileName);
+                    //Declare PDF Document 
                     PdfDocument pdf = new PdfDocument(writer);
                     float pageWidth = PageSize.A4.GetWidth();
                     float pageHeight = 100;
 
-                    string sb = data.Name;
+                    string sb = "";
+                    if (data.Name != null)
+                    { sb = data.Name; }
                     Paragraph title = new Paragraph(sb).SetTextAlignment(TextAlignment.CENTER);
                     string Address = data.Address + ",   " + data.Contact;
                     string ReceiptInfo = "RECEIPT NO: " + LblReceiptNo.Text.Trim();
+
+                    //Declare Table
                     Table bus = new Table(UnitValue.CreatePercentArray(new float[] { 15, 5 })).SetVerticalAlignment(VerticalAlignment.TOP).SetHorizontalAlignment(HorizontalAlignment.CENTER);
                     bus.SetWidth(UnitValue.CreatePercentValue(100));
                     bus.SetHorizontalAlignment(HorizontalAlignment.CENTER);
@@ -1208,6 +1211,7 @@ namespace SimpleBilling.MasterForms
                     footer.AppendLine("........................................                                                                                                                                                                ...........................");
                     footer.AppendLine("     Customer Signature                                Please Note : Credit balance should be settled within 30 days                                          Checked by");
                     Paragraph foot = new Paragraph(footer.ToString()).SetFontSize(8).SetTextAlignment(TextAlignment.CENTER);
+                    //Page Size
                     PageSize ps = new PageSize(pageWidth, pageHeight);
                     Document document = new Document(pdf, ps);
                     document.SetMargins(10, 30, 10, 30);

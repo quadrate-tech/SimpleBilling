@@ -115,7 +115,6 @@
             // 
             // TxtCodeNumber
             // 
-            this.TxtCodeNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.supplierBindingSource, "CodeNumber", true));
             this.TxtCodeNumber.Location = new System.Drawing.Point(573, 93);
             this.TxtCodeNumber.Name = "TxtCodeNumber";
             this.TxtCodeNumber.Size = new System.Drawing.Size(278, 26);
@@ -124,7 +123,6 @@
             // 
             // TxtEmail
             // 
-            this.TxtEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.supplierBindingSource, "Email", true));
             this.TxtEmail.Location = new System.Drawing.Point(288, 93);
             this.TxtEmail.Name = "TxtEmail";
             this.TxtEmail.Size = new System.Drawing.Size(278, 26);
@@ -132,7 +130,6 @@
             // 
             // TxtAddress
             // 
-            this.TxtAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.supplierBindingSource, "Address", true));
             this.TxtAddress.Location = new System.Drawing.Point(3, 93);
             this.TxtAddress.Name = "TxtAddress";
             this.TxtAddress.Size = new System.Drawing.Size(278, 26);
@@ -141,7 +138,6 @@
             // 
             // TxtContact
             // 
-            this.TxtContact.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.supplierBindingSource, "Contact", true));
             this.TxtContact.Location = new System.Drawing.Point(573, 33);
             this.TxtContact.Name = "TxtContact";
             this.TxtContact.Size = new System.Drawing.Size(278, 26);
@@ -149,7 +145,6 @@
             // 
             // TxtSupplierName
             // 
-            this.TxtSupplierName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.supplierBindingSource, "Name", true));
             this.TxtSupplierName.Location = new System.Drawing.Point(288, 33);
             this.TxtSupplierName.Name = "TxtSupplierName";
             this.TxtSupplierName.Size = new System.Drawing.Size(278, 26);
@@ -218,7 +213,6 @@
             // 
             // TxtSupplierId
             // 
-            this.TxtSupplierId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.supplierBindingSource, "SupplierId", true));
             this.TxtSupplierId.Location = new System.Drawing.Point(3, 33);
             this.TxtSupplierId.Name = "TxtSupplierId";
             this.TxtSupplierId.ReadOnly = true;
@@ -407,11 +401,11 @@
         private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.Button BtnEdit;
         private System.Windows.Forms.Button BtnAdd;
-        private System.Windows.Forms.BindingSource supplierBindingSource;
         private System.Windows.Forms.Label LblMessage;
         private System.Windows.Forms.Timer MessageTimer;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TxtSearchSuppliers;
+        private System.Windows.Forms.BindingSource supplierBindingSource;
     }
 }
