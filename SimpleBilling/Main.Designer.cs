@@ -196,7 +196,7 @@
             this.gRNInvoicesToolStripMenuItem.Name = "gRNInvoicesToolStripMenuItem";
             this.gRNInvoicesToolStripMenuItem.Size = new System.Drawing.Size(213, 24);
             this.gRNInvoicesToolStripMenuItem.Text = "GRN Invoices";
-            this.gRNInvoicesToolStripMenuItem.Click += new System.EventHandler(this.gRNInvoicesToolStripMenuItem_Click);
+            //this.gRNInvoicesToolStripMenuItem.Click += new System.EventHandler(this.gRNInvoicesToolStripMenuItem_Click);
             // 
             // receiptsToolStripMenuItem
             // 

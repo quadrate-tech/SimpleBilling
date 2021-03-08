@@ -302,6 +302,10 @@
     <Compile Include="MasterForms\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103080706347_init.cs" />
+    <Compile Include="Migrations\202103080706347_init.designer.cs">
+      <DependentUpon>202103080706347_init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Bank.cs" />
     <Compile Include="Model\BaseEntity.cs" />
@@ -385,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForms\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103080706347_init.resx">
+      <DependentUpon>202103080706347_init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

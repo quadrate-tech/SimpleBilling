@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageSupplier));
             this.DGVSupplier = new System.Windows.Forms.DataGridView();
-            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CRUDPanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.TxtCodeNumber = new System.Windows.Forms.TextBox();
@@ -57,12 +56,13 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.TxtSearchSuppliers = new System.Windows.Forms.TextBox();
+            this.supplierBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DGVSupplier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.CRUDPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DGVSupplier
@@ -76,10 +76,6 @@
             this.DGVSupplier.ReadOnly = true;
             this.DGVSupplier.Size = new System.Drawing.Size(855, 230);
             this.DGVSupplier.TabIndex = 0;
-            // 
-            // supplierBindingSource
-            // 
-            this.supplierBindingSource.DataSource = typeof(SimpleBilling.Model.Supplier);
             // 
             // CRUDPanel
             // 
@@ -352,6 +348,10 @@
             this.TxtSearchSuppliers.TabIndex = 1;
             this.TxtSearchSuppliers.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtSearchSuppliers_KeyUp);
             // 
+            // supplierBindingSource
+            // 
+            this.supplierBindingSource.DataSource = typeof(SimpleBilling.Model.Supplier);
+            // 
             // ManageSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 19F);
@@ -372,13 +372,13 @@
             this.Text = "Manage Supplier";
             this.Load += new System.EventHandler(this.ManageSupplier_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVSupplier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             this.CRUDPanel.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.supplierBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
